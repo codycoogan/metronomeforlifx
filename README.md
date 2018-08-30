@@ -19,7 +19,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 
 ![alt text](https://github.com/codycoogan/metronomeforlifx/blob/master/images/spotclient.gif)
 
-- Here are your credentials
+- Here are your client id and client secret
 ![alt text](https://github.com/codycoogan/metronomeforlifx/blob/master/images/spotblurred_g.jpg)
 
 - Press edit settings, then once in the Spotify project settings add https://www.google.ca/ as the redirect URI (PIC?)
