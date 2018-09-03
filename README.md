@@ -1,5 +1,5 @@
 # Metronome for LIFX 
-Pulses LIFX lights to the beat of songs being currently played on Spotify with two different colors that are varied with every song
+Pulses LIFX lights to the beat of songs being currently played on Spotify with two different colors that are varied with every song.
 # What You Need
 - Spotify account
 - LIFX light(s)
@@ -41,7 +41,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 5. Sign in to Spotify in Metronome for Lifx app
 - Run metronomeforlifx.py in terminal/command prompt
 - Sign in to Spotify account when prompted in browser
-- If sign in was successfull, copy the URL of the page that you were redirected to after signing in (google.ca/...). If sign in is unsuccessfull re-run the program and attempt to sign in again
+- If sign in was successfull, copy the URL of the page that you were redirected to after signing in (google.ca/...). This is for authorization purposes. If sign in is unsuccessfull re-run the program and attempt to sign in again
 - Paste this URL into prompt in command line
 GIF HERE??
 
