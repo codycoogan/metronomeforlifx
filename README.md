@@ -1,11 +1,11 @@
 # Metronome for LIFX 
 Pulses LIFX lights to the beat of songs being currently played on Spotify with two different colors that are varied with every song.
-# What You Need
+# What You Will Need
 - Spotify account
 - LIFX light(s)
-- Spotify client id
-- Spotify client secret
-- LIFX access tokenLINK
+- Spotify client id (tutorial below)
+- Spotify client secret (tutorial below)
+- LIFX access token (tutorial below)
 
 # Set Up
 1. Get LIFX access token
@@ -22,7 +22,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 - Here are your client id and client secret
 ![alt text](https://github.com/codycoogan/metronomeforlifx/blob/master/images/spotblurred_g.jpg)
 
-- Press edit settings, then once in the Spotify project settings add https://www.google.ca/ as the redirect URI
+- Press edit settings, then once in the Spotify project settings add https://www.google.com/ as the redirect URI
 
 
 3. Fill out metronomeconfig.txt 
@@ -41,7 +41,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 5. Sign in to Spotify in Metronome for Lifx app
 - Run metronomeforlifx.py in terminal/command prompt
 - Sign in to Spotify account when prompted in browser
-- If sign in was successfull, copy the URL of the page that you were redirected to after signing in (google.ca/CHANGE THIS...). This is for authorization purposes. If sign in is unsuccessfull re-run the program and attempt to sign in again
+- If sign in was successfull, copy the URL of the page that you were redirected to after signing in (google.com/...). This is for authorization purposes. If sign in is unsuccessfull re-run the program and attempt to sign in again
 - Paste this URL into prompt in command line
 
 # Troubleshooting
@@ -49,6 +49,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 - Make sure metronomeconfig.txt is filled out with valid information
 - Make sure metronomeconfig.txt, requirements.txt, and metronomeforlifx.py are all in the same directory on your computer
 - Make sure a valid Spotify song is playing on the same account you signed in to
+- Make sure you have https://www.google.com/ saved as the redirect URI in your Spotify app settings
 
 
 
