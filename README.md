@@ -5,7 +5,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 - LIFX light(s)
 - Spotify client id
 - Spotify client secret
-- LIFX access token
+- LIFX access tokenLINK
 
 # Set Up
 1. Get LIFX access token
@@ -22,7 +22,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 - Here are your client id and client secret
 ![alt text](https://github.com/codycoogan/metronomeforlifx/blob/master/images/spotblurred_g.jpg)
 
-- Press edit settings, then once in the Spotify project settings add https://www.google.ca/ as the redirect URI (PIC?)
+- Press edit settings, then once in the Spotify project settings add https://www.google.ca/ as the redirect URI
 
 
 3. Fill out metronomeconfig.txt 
@@ -41,9 +41,8 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 5. Sign in to Spotify in Metronome for Lifx app
 - Run metronomeforlifx.py in terminal/command prompt
 - Sign in to Spotify account when prompted in browser
-- If sign in was successfull, copy the URL of the page that you were redirected to after signing in (google.ca/...). This is for authorization purposes. If sign in is unsuccessfull re-run the program and attempt to sign in again
+- If sign in was successfull, copy the URL of the page that you were redirected to after signing in (google.ca/CHANGE THIS...). This is for authorization purposes. If sign in is unsuccessfull re-run the program and attempt to sign in again
 - Paste this URL into prompt in command line
-GIF HERE??
 
 # Troubleshooting
 - Make sure LIFX lights are on and online
