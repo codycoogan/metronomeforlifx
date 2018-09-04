@@ -52,6 +52,3 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 - Make sure you have https://www.google.com/ saved as the redirect URI in your Spotify app settings
 
 
-
-TEST NEW RANDOM AND SUBMIT NEW FILEG
-
