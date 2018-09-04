@@ -1,0 +1,15 @@
+#enter Spotify details
+client_id = 
+client_secret = 
+spot_username = 
+
+#enter LIFX token
+lifx_token = 
+
+#Settings
+#1.0 is 100% brightness, 0.5 is 50% brightness, etc.
+lights_brightness = 1.0
+
+#Colors that the lights could be, must have at least two items
+colors = white , red , orange , green , blue , yellow , pink , purple , cyan
+
