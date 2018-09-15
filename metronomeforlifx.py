@@ -25,8 +25,8 @@ def main():
     rawcolor = datadict["colors"]
     username = datadict["spot_username"]
     rawcolorslist = rawcolor.split(",")
-    for num in range(0,len(rawcolorslist)-1):
-        colors.append(rawcolorslist[num].strip()) 
+    for num in range(0, len(rawcolorslist) - 1):
+        colors.append(rawcolorslist[num].strip())
     brightness = datadict["lights_brightness"]
 
     spotify_authenticate()
@@ -83,22 +83,22 @@ def play_song():
 
     tot = 0
     while True:
-	    try:
-	        if (get_song_id()[0] != current_id):
-	            play_song()
-	            break
-	        elif tot >= duration:
-	            break 
-	        else:
-	            t.sleep(5.0)
-	            tot += 5
-	    except KeyboardInterrupt:
-	        print ('Stopped')
-	        stop_lights(firstColor)
-	        break
-	    except TypeError:
-	    	print ("TypeError")
-	        play_song()
+        try:
+            if (get_song_id()[0] != current_id):
+                play_song()
+                break
+            elif tot >= duration:
+                break
+            else:
+                t.sleep(5.0)
+                tot += 5
+        except KeyboardInterrupt:
+            print ('Stopped')
+            stop_lights(firstColor)
+            break
+        except TypeError:
+            print ("TypeError")
+            play_song()
 
 
 def stop_lights(color):
@@ -175,5 +175,5 @@ def get_variables():
         return dicti
 
 
-if __name__ == "__main__": 
-	main()
+if __name__ == "__main__":
+    main()
