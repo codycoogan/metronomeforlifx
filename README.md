@@ -32,7 +32,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 - Save the file
 
 
-4. Install requirements.txt
+4. Download requirements.txt
 - After downloading requirements.txt open terminal or command prompt
 - Go to the directory where this project is saved in
 - Run: pip install -r requirements.txt    in the command line
