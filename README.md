@@ -12,7 +12,7 @@
 - Visit https://cloud.lifx.com/sign_in
 ![alt text](https://discourse-cdn-sjc2.com/standard17/uploads/lifx/optimized/1X/f27580c296f07b32152239c037bf9c964f05444a_1_690x394.gif) 
 
-**2. Get Spotify client id and client secret**
+**2. Get Spotify client id and client secret, and set redirect URI**
 - Visit https://developer.spotify.com/dashboard/
 
 - Create an app 
