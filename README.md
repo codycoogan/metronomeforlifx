@@ -28,7 +28,7 @@ Pulses LIFX lights to the beat of songs being currently played on Spotify with t
 3. Fill out metronomeconfig.txt 
 - Open metronomeconfig.txt
 ![alt text](https://github.com/codycoogan/metronomeforlifx/blob/master/images/configsc.png)
-- Paste your LIFX token and your Spotify client id and secret in the respective spots in the file
+- Paste your LIFX token and your Spotify client id, secret, and username in the respective spots in the file
 - Save the file
 
 
