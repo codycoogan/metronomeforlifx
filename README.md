@@ -35,7 +35,7 @@
 **4. Download requirements.txt**
 - After downloading requirements.txt open terminal or command prompt
 - Go to the directory where this project is saved in
-- Run: pip install -r requirements.txt    in the command line to install the necessary libraries
+- Run: **pip install -r requirements.txt**    in the command line to install the necessary libraries
 
 
 **5. Sign in to Spotify in Metronome for Lifx app**
