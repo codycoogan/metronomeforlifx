@@ -34,6 +34,7 @@
 
 **4. Download requirements.txt**
 - After downloading requirements.txt open terminal or command prompt
+- Make sure pip is installed (if not, search "how to install pip")
 - Go to the directory where this project is saved in
 - Run: **pip install -r requirements.txt**    in the command line to install the necessary libraries
 
