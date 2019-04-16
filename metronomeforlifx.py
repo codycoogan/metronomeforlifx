@@ -1,33 +1,36 @@
-import json
+# Latest edit April 15, 2019: bug fixes, added lpb
 import requests
 import time as t
-import spotipy
 import spotipy.util as util
 import random
 
-global spotify_token, client_id, client_secret, lifx_token, colors, username
+global spotify_token, client_id, client_secret, lifx_token, colors, username, lpb, firstColor
 colors = []
 client_id = ""
 client_secret = ""
 lifx_token = ""
 spotify_token = ""
 username = ""
+firstColor = "white"
+lpb = 1
 selector = "all"
 scope = "user-read-currently-playing"
 
 
 def main():
     datadict = get_variables()
-    global client_secret, colors, client_id, lifx_token, username
+    global client_secret, colors, client_id, lifx_token, username, lpb
     client_id = datadict["client_id"]
     client_secret = datadict["client_secret"]
     lifx_token = datadict["lifx_token"]
     rawcolor = datadict["colors"]
     username = datadict["spot_username"]
     rawcolorslist = rawcolor.split(",")
-    for num in range(0, len(rawcolorslist) - 1):
-        colors.append(rawcolorslist[num].strip())
+    lpb = float(datadict["lpb"])
     brightness = datadict["lights_brightness"]
+
+    for num in range(0, len(rawcolorslist)):
+        colors.append(rawcolorslist[num].strip())
 
     spotify_authenticate()
 
@@ -43,11 +46,16 @@ def main():
 
 
 def play_song():
-    firstColor = colors[random.randint(0, (len(colors) - 1))]
+    global firstColor
+
+    firstColor = colors[random.randint(0, (len(colors)-1))]
     colors.remove(firstColor)
-    secondColor = colors[random.randint(0, (len(colors) - 1))]
+    # try:
+    secondColor = colors[random.randint(0, (len(colors)-1))]
+    # except ValueError:
+    #     secondColor = colors[0]
     colors.append(firstColor)
-    print("First color = " + firstColor + "; Second color = " + secondColor)
+    print("First Color: " + firstColor + "; Second Color: " + secondColor)
 
     # Get data from currently playing song (bpm, id, and length)
     song_info = get_current_song()
@@ -56,21 +64,22 @@ def play_song():
     current_id = song_info[2]
     name = song_info[3]
 
-    print("Track Title = " + str(name))
-    print("Current Track ID = " + str(current_id))
-    print("BPM = " + str(bpm))
+    print("Track Title: " + str(name))
+    print("Current Track ID: " + str(current_id))
+    print("BPM: " + str(round(bpm, 2)))
+    print("Lights Per Beat (can be changed in metronomeconfig.txt): " + str(lpb))
 
     # Get total beats in song, and time for period of pulse
     totalbeats = (duration / 60) * bpm
-    time = duration / totalbeats
-    print("Period Time = " + str(time))
+    time = ((duration / totalbeats) / lpb)
+    print("Time Interval Per Light: " + str(round(time, 2)) + " seconds")  # Time for color to change
 
     # Make lights pulse to beat, have two colors change every beat
     data = {
         "color": str(firstColor),
         "period": (time * 2),
         "from_color": str(secondColor),
-        "cycles": (totalbeats / 2),
+        "cycles": ((totalbeats / 2) * lpb),
         "power_on": "true",
         "persist": "true"
     }
@@ -78,26 +87,22 @@ def play_song():
     light_status(pulse.json())
 
     # poll every 5 seconds because no web hook exists
-    print("Starting to poll every 5 seconds...")
+    print("Checking for a change in song every 5 seconds...")
     print("Press CTRL-C to quit\n")
 
-    tot = 0
     while True:
         try:
-            if (get_song_id()[0] != current_id):
+            if get_song_id()[0] != current_id:
                 play_song()
-                break
-            elif tot >= duration:
                 break
             else:
                 t.sleep(5.0)
-                tot += 5
         except KeyboardInterrupt:
-            print ('Stopped')
+            print(' Stopped')
             stop_lights(firstColor)
             break
         except TypeError:
-            print ("TypeError")
+            print('TypeError')
             play_song()
 
 
@@ -122,8 +127,8 @@ def get_song_id():
         "Authorization": "Bearer {}".format(spotify_token)
     }
     get_id = requests.get("https://api.spotify.com/v1/me/player/currently-playing", headers=header)
-    song_content = get_id.json()
     try:
+        song_content = get_id.json()
         id = song_content['item']['id']
         name = song_content['item']['name']
         return [id, name]
@@ -132,6 +137,10 @@ def get_song_id():
         get_song_id()
     except TypeError:
         print("Spotify Error: make sure valid song is playing")
+        exit()
+    except ValueError: #TODO: see if this helps
+        print("Error: looks like no song is playing")
+        stop_lights(firstColor)
         exit()
 
 
@@ -177,3 +186,6 @@ def get_variables():
 
 if __name__ == "__main__":
     main()
+
+
+
