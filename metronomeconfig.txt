@@ -1,15 +1,18 @@
-#enter Spotify details
-client_id = 
-client_secret = 
-spot_username = 
+#Enter Spotify details
+client_id =
+client_secret =
+spot_username =
 
-#enter LIFX token
-lifx_token = 
+#Enter LIFX token
+lifx_token =
 
 #Settings
-#1.0 is 100% brightness, 0.5 is 50% brightness, etc.
+#Brightness: 1.0 is 100% brightness, 0.5 is 50% brightness, etc.
 lights_brightness = 1.0
 
-#Colors that the lights could be, must have at least two items
-colors = white , red , orange , green , blue , yellow , pink , purple , cyan
+#LPB (lights per beat): the number of light flashes that occur per beat;
+#a lpb value of 1 means 1 light flash per beat, 2 means 2 flashes per beat, etc.
+lpb = 1
 
+#Colors that the lights could be, must have at least two colors
+colors = white, red, orange, green, blue, yellow, pink, purple, cyan
