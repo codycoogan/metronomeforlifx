@@ -27,8 +27,9 @@
 
 **3. Fill out metronomeconfig.txt** 
 - Open metronomeconfig.txt
-![alt text](https://github.com/codycoogan/metronomeforlifx/blob/master/images/configsc.png)
+![alt text](https://github.com/codycoogan/metronomeforlifx/blob/master/images/configsc2.png)
 - Paste your LIFX token and your Spotify client id, secret, and username in the respective spots in the file
+- You can choose the pool of colors that the lights could be, the brightness, and the lights per beat in this file as well
 - Save the file
 
 
