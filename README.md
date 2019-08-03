@@ -1,5 +1,8 @@
 # Metronome for LIFX 
 **Pulses LIFX lights to the beat** of songs being currently played on Spotify with two different colors that are varied with every song.
+
+If you enjoy this program you can buy me a cup of coffee :)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=S8HEDX3BSDKL8&source=url)
 # What You Will Need
 - Spotify account
 - LIFX light(s)
